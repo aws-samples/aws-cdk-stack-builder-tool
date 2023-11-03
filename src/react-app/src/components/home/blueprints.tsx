@@ -32,10 +32,10 @@ export function Blueprints(props: {
         <li key={blueprint.id} className="flow-root">
           <div
             className={Utils.classNames(
-              "cursor-pointer border border-transparent relative -m-2 p-2 flex items-center space-x-4 rounded-xl hover:bg-gray-50 focus-within:ring-2 focus-within:ring-indigo-500",
+              "cursor-pointer border relative -m-2 p-2 flex items-center space-x-4 rounded-xl hover:bg-gray-50 focus-within:ring-2 focus-within:ring-indigo-500",
               blueprint.id === props.selectedBlueprintId
                 ? "border-indigo-300 bg-gray-50"
-                : "hover:border-gray-200"
+                : "border-transparent hover:border-indigo-300"
             )}
             onClick={() => onSelectClick(blueprint.id)}
           >
