@@ -1,0 +1,285 @@
+{
+  "format": 1,
+  "kind": "cdk/project-blueprint",
+  "platform": "cdk",
+  "extend": "cdk-base",
+  "id": "c00899a2-8975-4220-a21d-878081d93c0b",
+  "name": "Sample Blueprint",
+  "description": "Sample blueprint to show blueprint capabilities",
+  "icon": "PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAyNCAyNCIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2U9IndoaXRlIiBhcmlhLWhpZGRlbj0idHJ1ZSI+PHBhdGggc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBkPSJNMy4wNTUgMTFINWEyIDIgMCAwMTIgMnYxYTIgMiAwIDAwMiAyIDIgMiAwIDAxMiAydjIuOTQ1TTggMy45MzVWNS41QTIuNSAyLjUgMCAwMDEwLjUgOGguNWEyIDIgMCAwMTIgMiAyIDIgMCAxMDQgMCAyIDIgMCAwMTItMmgxLjA2NE0xNSAyMC40ODhWMThhMiAyIDAgMDEyLTJoMy4wNjRNMjEgMTJhOSA5IDAgMTEtMTggMCA5IDkgMCAwMTE4IDB6Ij48L3BhdGg+PC9zdmc+",
+  "background": "#3ba1f6",
+  "favorites": [
+    "aws-cdk-lib.Stack",
+    "aws-cdk-lib.NestedStack",
+    "aws-cdk-lib.aws_s3.Bucket"
+  ],
+  "root": {
+    "kind": "instance",
+    "valueId": "01662713462692724110003",
+    "valueName": "App",
+    "valueType": {
+      "fqn": "aws-cdk-lib.App"
+    },
+    "parameters": {},
+    "children": [
+      {
+        "kind": "instance",
+        "valueId": "01662713462692122710004",
+        "valueName": "SampleStack",
+        "valueType": {
+          "fqn": "aws-cdk-lib.Stack"
+        },
+        "children": [
+          {
+            "kind": "instance",
+            "valueId": "01662722178156478610014",
+            "valueName": "DistributionHello",
+            "valueType": {
+              "fqn": "aws-cdk-lib.aws_cloudfront.Distribution"
+            },
+            "children": [],
+            "parameters": {
+              "defaultBehavior": {
+                "kind": "object",
+                "valueId": "01662722186974225410016",
+                "valueType": {
+                  "fqn": "aws-cdk-lib.aws_cloudfront.BehaviorOptions"
+                },
+                "properties": {
+                  "origin": {
+                    "kind": "instance",
+                    "valueId": "01662722192879456110017",
+                    "valueType": {
+                      "fqn": "aws-cdk-lib.aws_cloudfront_origins.S3Origin"
+                    },
+                    "children": [],
+                    "parameters": {
+                      "bucket": {
+                        "kind": "ref",
+                        "valueId": "01662722194975573410018",
+                        "valueType": {
+                          "fqn": "aws-cdk-lib.aws_s3.Bucket"
+                        },
+                        "refValueId": "01662722194978882010020"
+                      }
+                    }
+                  }
+                }
+              },
+              "additionalBehaviors": {
+                "kind": "map",
+                "valueId": "01662722199109286210021",
+                "valueType": {
+                  "collection": {
+                    "elementtype": {
+                      "fqn": "aws-cdk-lib.aws_cloudfront.BehaviorOptions"
+                    },
+                    "kind": "map"
+                  }
+                },
+                "pairs": {
+                  "hello": {
+                    "kind": "object",
+                    "valueId": "01662722199140763910023",
+                    "valueType": {
+                      "fqn": "aws-cdk-lib.aws_cloudfront.BehaviorOptions"
+                    },
+                    "properties": {
+                      "origin": {
+                        "kind": "instance",
+                        "valueId": "0166272220574759910026",
+                        "valueType": {
+                          "fqn": "aws-cdk-lib.aws_cloudfront_origins.HttpOrigin"
+                        },
+                        "children": [],
+                        "parameters": {
+                          "domainName": {
+                            "kind": "primitive",
+                            "valueId": "01662722219134806310027",
+                            "valueType": {
+                              "primitive": "string"
+                            },
+                            "value": "https://google.com"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          {
+            "kind": "instance",
+            "valueId": "01662722194978882010020",
+            "valueName": "Bucket1",
+            "valueType": {
+              "fqn": "aws-cdk-lib.aws_s3.Bucket"
+            },
+            "children": [],
+            "parameters": {}
+          },
+          {
+            "kind": "instance",
+            "valueId": "0166272222776432610029",
+            "valueName": "RestApi1",
+            "valueType": {
+              "fqn": "aws-cdk-lib.aws_apigateway.RestApi"
+            },
+            "children": [],
+            "parameters": {}
+          },
+          {
+            "kind": "call",
+            "valueId": "016627222344128610030",
+            "valueType": {
+              "fqn": "aws-cdk-lib.aws_apigateway.Resource"
+            },
+            "methodOfId": "0166272222776432610029",
+            "methodOfType": {
+              "fqn": "aws-cdk-lib.aws_apigateway.IResource"
+            },
+            "methodPath": ["root"],
+            "method": "addResource",
+            "parameters": {
+              "pathPart": {
+                "kind": "primitive",
+                "valueId": "01662722239579535710031",
+                "valueType": {
+                  "primitive": "string"
+                },
+                "value": "v1"
+              }
+            },
+            "valueName": "Resource1"
+          },
+          {
+            "kind": "call",
+            "valueId": "01662722242790646510032",
+            "valueType": {
+              "fqn": "aws-cdk-lib.aws_apigateway.Resource"
+            },
+            "methodOfId": "016627222344128610030",
+            "methodOfType": {
+              "fqn": "aws-cdk-lib.aws_apigateway.Resource"
+            },
+            "methodPath": [],
+            "method": "addResource",
+            "parameters": {
+              "pathPart": {
+                "kind": "primitive",
+                "valueId": "01662722245208619910033",
+                "valueType": {
+                  "primitive": "string"
+                },
+                "value": "hello"
+              }
+            },
+            "valueName": "Resource2"
+          },
+          {
+            "kind": "call",
+            "valueId": "01662722251944168710034",
+            "valueType": {
+              "fqn": "aws-cdk-lib.aws_apigateway.Method"
+            },
+            "methodOfId": "01662722242790646510032",
+            "methodOfType": {
+              "fqn": "aws-cdk-lib.aws_apigateway.Resource"
+            },
+            "methodPath": [],
+            "method": "addMethod",
+            "parameters": {
+              "httpMethod": {
+                "kind": "primitive",
+                "valueId": "01662722254382888310035",
+                "valueType": {
+                  "primitive": "string"
+                },
+                "value": "GET"
+              },
+              "target": {
+                "kind": "instance",
+                "valueId": "01662722263223607610037",
+                "valueType": {
+                  "fqn": "aws-cdk-lib.aws_apigateway.LambdaIntegration"
+                },
+                "children": [],
+                "parameters": {
+                  "handler": {
+                    "kind": "ref",
+                    "valueId": "01662722274061999410038",
+                    "valueType": {
+                      "fqn": "aws-cdk-lib.aws_lambda.Function"
+                    },
+                    "refValueId": "01662722274065764610040"
+                  }
+                }
+              }
+            },
+            "valueName": "Method1"
+          },
+          {
+            "kind": "instance",
+            "valueId": "01662722274065764610040",
+            "valueName": "Function1",
+            "valueType": {
+              "fqn": "aws-cdk-lib.aws_lambda.Function"
+            },
+            "children": [],
+            "parameters": {
+              "code": {
+                "kind": "instance",
+                "valueId": "01662722276882960510041",
+                "valueType": {
+                  "fqn": "aws-cdk-lib.aws_lambda.InlineCode"
+                },
+                "children": [],
+                "parameters": {
+                  "code": {
+                    "kind": "primitive",
+                    "valueId": "01662722283492337010042",
+                    "valueType": {
+                      "primitive": "string"
+                    },
+                    "value": "console.log('123');"
+                  }
+                }
+              },
+              "handler": {
+                "kind": "primitive",
+                "valueId": "01662722287706150710043",
+                "valueType": {
+                  "primitive": "string"
+                },
+                "value": "index.handler"
+              },
+              "runtime": {
+                "kind": "property",
+                "valueId": "01662722291822759610044",
+                "propertyOfType": {
+                  "fqn": "aws-cdk-lib.aws_lambda.Runtime"
+                },
+                "valueType": {
+                  "fqn": "aws-cdk-lib.aws_lambda.Runtime"
+                },
+                "property": "NODEJS_16_X"
+              }
+            }
+          }
+        ],
+        "parameters": {}
+      },
+      {
+        "kind": "instance",
+        "valueId": "01662720095120260710014",
+        "valueName": "Stack1",
+        "valueType": {
+          "fqn": "aws-cdk-lib.Stack"
+        },
+        "children": [],
+        "parameters": {}
+      }
+    ]
+  }
+}
