@@ -54,11 +54,11 @@ You have:
 
 1. Clone the repository
 ```bash
-git clone https://github.com/aws-samples/aws-cdk-builder
+git clone https://github.com/aws-samples/aws-cdk-stack-builder-tool
 ```
 2. Move into the cloned repository
 ```bash
-cd aws-cdk-builder
+cd aws-cdk-stack-builder-tool
 ```
 
 <a id="deployment-dependencies-installation"></a>
