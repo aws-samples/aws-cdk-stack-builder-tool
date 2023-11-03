@@ -11,6 +11,10 @@ import "prismjs/components/prism-typescript";
 import "prismjs/components/prism-markdown";
 
 registerServiceWorker();
+let basename = import.meta.env.BASE_URL;
+if (!basename.endsWith("/")) {
+  basename = basename + "/";
+}
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -27,7 +31,7 @@ root.render(
 function registerServiceWorker() {
   if ("serviceWorker" in navigator) {
     window.addEventListener("load", () => {
-      const url = `${import.meta.env.BASE_URL}service-worker.js`;
+      const url = `${basename}service-worker.js`;
 
       navigator.serviceWorker
         .register(url)
