@@ -1,4 +1,8 @@
-# AWS CDK Builder
+# [AWS CDK Builder](https://glowing-broccoli-634w57r.pages.github.io/)
+[![Release Notes](https://img.shields.io/github/v/release/aws-samples/aws-cdk-stack-builder-tool)](https://github.com/aws-samples/aws-cdk-stack-builder-tool/releases)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+**:fire: [Try AWS CDK Builder](https://glowing-broccoli-634w57r.pages.github.io/) :fire:**
 
 ![sample](assets/aws-cdk-builder.png "AWS CDK Builder")
 
