@@ -101,7 +101,7 @@ export function DesignerModal() {
                       <ArrowLeftIcon className="h-5 w-5" aria-hidden="true" />
                     </button>
                   </div>
-                  <div className="overflow-x-scroll">
+                  <div className="overflow-x-auto">
                     <Dialog.Title
                       as="h3"
                       className="text-lg leading-6 font-medium text-gray-900"
@@ -123,7 +123,7 @@ export function DesignerModal() {
                 </div>
                 <div
                   key={state.computed.selectedValue?.valueId || ""}
-                  className="grid grid-rows-[auto_1fr] min-w-[30vw] min-h-[30vh] max-h-[80vh] overflow-y-scroll"
+                  className="grid grid-rows-[auto_1fr] min-w-[30vw] min-h-[30vh] max-h-[80vh] overflow-y-auto"
                 >
                   <div className="px-2 py-1">
                     <TypeHeader />

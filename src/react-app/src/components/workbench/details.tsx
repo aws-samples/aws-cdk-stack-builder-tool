@@ -14,14 +14,14 @@ export function Details() {
 
   if (!item || !TypeTest.isFqn(item.value.valueType)) {
     return (
-      <div className="flex items-center justify-center h-full overflow-y-scroll relative border-l border-gray-200 bg-gray-100">
+      <div className="flex items-center justify-center h-full overflow-y-auto relative border-l border-gray-200 bg-gray-100">
         <DetailsEmpty />
       </div>
     );
   }
 
   return (
-    <div className="h-full overflow-y-scroll grid grid-rows-[auto_1fr] border-l border-gray-200 bg-gray-100">
+    <div className="h-full overflow-y-auto grid grid-rows-[auto_1fr] border-l border-gray-200 bg-gray-100">
       <div className="py-0.5 pr-0.5">
         <DetailsHeader
           filter={filter}
@@ -31,7 +31,7 @@ export function Details() {
           setTab={setTab}
         />
       </div>
-      <div className="overflow-y-scroll pt-3 px-4">
+      <div className="overflow-y-auto pt-3 px-4">
         {tab === "methods" && <MethodsDesigner parent={item.value} />}
         {tab === "properties" && (
           <ObjectDesigner modal={false} filter={filter} setFilter={setFilter} />

@@ -128,7 +128,7 @@ export function BlueprintsModal(props: {
                     <XMarkIcon className="h-6 w-6" aria-hidden="true" />
                   </button>
                 </div>
-                <div className="min-w-[30vw] min-h-[30vh] max-h-[60vh] overflow-y-scroll px-6 py-4">
+                <div className="min-w-[30vw] min-h-[30vh] max-h-[60vh] overflow-y-auto px-6 py-4">
                   <Blueprints
                     multicolumn={false}
                     selectedBlueprintId={selectedBlueprintId}

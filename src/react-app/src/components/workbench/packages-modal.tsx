@@ -202,7 +202,7 @@ export function PackagesModal(props: {
                   <div className="px-6 pt-2 block text-sm font-medium text-gray-700">
                     Installed packages
                   </div>
-                  <div className="min-w-[30vw] min-h-[30vh] max-h-[60vh] overflow-y-scroll ">
+                  <div className="min-w-[30vw] min-h-[30vh] max-h-[60vh] overflow-y-auto ">
                     <PackagesList />
                   </div>
                 </div>

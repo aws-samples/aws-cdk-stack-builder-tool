@@ -81,7 +81,7 @@ export function Code() {
     <>
       <Navbar />
       <div className="h-full w-full pt-16 mx-auto grid grid-rows-[auto_1fr]">
-        <div className="py-0.5 overflow-x-scroll w-full">
+        <div className="py-0.5 overflow-x-auto w-full">
           <Breadcrumbs />
         </div>
         <div className="h-full w-full overflow-scroll">

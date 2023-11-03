@@ -60,7 +60,7 @@ export function Projects() {
         </div>
         <div
           className={Utils.classNames(
-            "border-t border-gray-200 py-5 px-4 overflow-y-scroll h-[65vh] max-h-[1000px]",
+            "border-t border-gray-200 py-5 px-4 overflow-y-auto h-[65vh] max-h-[1000px]",
             hasProjects ? "" : "flex items-center justify-center"
           )}
         >

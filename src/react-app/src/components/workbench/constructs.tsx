@@ -26,7 +26,7 @@ export function Constructs() {
   };
 
   return (
-    <div className="h-full overflow-y-scroll grid grid-rows-[auto_1fr]">
+    <div className="h-full overflow-y-auto grid grid-rows-[auto_1fr]">
       <div className="p-0.5">
         <ConstructsHeader
           key={`search-panel-${filterKey}`}
@@ -34,7 +34,7 @@ export function Constructs() {
           setFilter={setFilter}
         />
       </div>
-      <div className="overflow-y-scroll pt-1">
+      <div className="overflow-y-auto pt-1">
         <ConstructList filter={filter} setFilter={setFilterOutside} />
       </div>
     </div>
