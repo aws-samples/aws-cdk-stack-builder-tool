@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  overflow-y: hidden;
+}
+
 .tooltip-container {
   min-width: 24rem;
   max-width: 40%;
