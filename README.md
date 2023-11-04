@@ -24,6 +24,12 @@ AWS CDK Builder is a browser-based tool designed to streamline bootstrapping of 
 
 # Deploy
 
+You do not need to deploy the AWS CDK Builder to use it; an online version is available.
+
+https://aws-samples.github.io/aws-cdk-stack-builder-tool
+
+But if you wish to deploy it on your own account, here is a step-by-step guide.
+
 ### Environment setup
 
 #### Deploy with AWS Cloud9
