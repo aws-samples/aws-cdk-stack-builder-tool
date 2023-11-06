@@ -66,7 +66,9 @@ function ConstructList(props: {
     });
 
     const moduleNames = Object.keys(modules).sort((a, b) => {
+      if (a === FAVORITES_NAME && b === FAVORITES_NAME) return 0;
       if (a === FAVORITES_NAME) return -1;
+      if (b === FAVORITES_NAME) return 1;
 
       if (
         state.blueprintComputed.favorites.includes(a) &&
