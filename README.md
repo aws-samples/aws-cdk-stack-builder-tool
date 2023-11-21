@@ -132,7 +132,7 @@ libs: {
   "@aws-cdk/aws-amplify-alpha": "2.x",
   ...
   "@aws-cdk/region-info": "2.x",
-  "my-cool-lib-1.2.3.tgz": "tar" // <-- This is the line to add, use filename as found in ./src/react-app/src/public/constructs as the key, and "tar" as the value
+  "my-cool-lib-1.2.3.tgz": "local" // <-- This is the line to add, use filename as found in ./src/react-app/src/public/constructs as the key, and "local" as the value
 },
 
 ```
