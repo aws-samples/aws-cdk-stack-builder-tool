@@ -17,7 +17,7 @@
 
 # Features
 
-AWS CDK Builder is a browser-based tool designed to streamline bootstrapping of Infrastructure as Code (IaC) projects using the AWS Cloud Development Kit (CDK). Equipped with a dynamic visual designer and instant TypeScript code generation capabilities, the CDK Builder simplifies the construction and deployment of CDK projects. It stands as a resource for all CDK users, providing a platform to explore a broad array of CDK constructs. 
+AWS CDK Builder is a browser-based tool designed to streamline bootstrapping of Infrastructure as Code (IaC) projects using the AWS Cloud Development Kit (CDK). Equipped with a dynamic visual designer and instant TypeScript code generation capabilities, the CDK Builder simplifies the construction and deployment of CDK projects. It stands as a resource for all CDK users, providing a platform to explore a broad array of CDK constructs.
 
 ![sample](assets/aws-cdk-builder-code.png "AWS CDK Builder")
 ![sample](assets/aws-cdk-builder-diagram.png "AWS CDK Builder")
@@ -33,7 +33,7 @@ But if you wish to deploy it on your own account, here is a step-by-step guide.
 ### Environment setup
 
 #### Deploy with AWS Cloud9
-We recommend deploying with [AWS Cloud9](https://aws.amazon.com/cloud9/). 
+We recommend deploying with [AWS Cloud9](https://aws.amazon.com/cloud9/).
 If you'd like to use Cloud9 to deploy the solution, you will need the following before proceeding:
 - use `Ubuntu Server 22.04 LTS` as the platform.
 
@@ -112,6 +112,32 @@ npx cdk destroy
 AWS CDK Builder is a serverless static website application, created using React and TypeScript.
 
 ![sample](assets/architecture.png "Architecture Diagram")
+
+# Adding Private Constructs
+If there are constructs which are not in the public npm js registry, they can be added as follows:
+
+1. Download the npm package:
+```bash
+npm pack <your-package> --pack-destination ./public/constructs
+```
+
+2. Modify a blueprint to use the newly added package. For example, to change the `Blank` blueprint:
+```bash
+open ./src/react-app/src/blueprints/cdk-blank.ts
+```
+
+3. Modify `libs: {` as follows:
+```typescript
+libs: {
+  "@aws-cdk/aws-amplify-alpha": "2.x",
+  ...
+  "@aws-cdk/region-info": "2.x",
+  "my-cool-lib-1.2.3.tgz": "local" // <-- This is the line to add, use filename as found in ./src/react-app/src/public/constructs as the key, and "local" as the value
+},
+
+```
+
+Now when a project is created using the modified blueprint, it will have access to the private constructs.
 
 # License
 
