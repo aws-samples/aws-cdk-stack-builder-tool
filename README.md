@@ -13,6 +13,7 @@
   - [Local deployment](#local-deployment)
 - [Clean up](#clean-up)
 - [Architecture](#architecture)
+- [Adding private constructs](#adding-private-constructs)
 - [License](#license)
 
 # Features
@@ -113,7 +114,7 @@ AWS CDK Builder is a serverless static website application, created using React 
 
 ![sample](assets/architecture.png "Architecture Diagram")
 
-# Adding Private Constructs
+# Adding private constructs
 If there are constructs which are not in the public npm js registry, they can be added as follows:
 
 1. Download the npm package:
