@@ -118,7 +118,7 @@ If there are constructs which are not in the public npm js registry, they can be
 
 1. Download the npm package:
 ```bash
-npm pack <your-package> --pack-destination ./public/constructs
+npm pack <your-package> --pack-destination ./src/react-app/public/constructs
 ```
 
 2. Modify a blueprint to use the newly added package. For example, to change the `Blank` blueprint:
