@@ -18,16 +18,20 @@ export class PackageManager {
   async getPackage(packageName: string, version: string) {
     const cache = await caches.open("packages");
 
+    let packageMetaData;
     if (version == "local") {
-      const targetVersion = packageName.substring(packageName.length - 9, packageName.length - 4);
-      var packageMetaData = { metadata: {}, tarball: `../constructs/${packageName}`, version: targetVersion }
-    }
-    else {
-      // I'm almost positive there's a better way to handle this than var. I just don't know what it is.
-      var packageMetaData = await this.getPackageMetadata(
-        packageName,
-        version
+      const targetVersion = packageName.substring(
+        packageName.length - 9,
+        packageName.length - 4
       );
+
+      packageMetaData = {
+        metadata: {},
+        tarball: `../constructs/${packageName}`,
+        version: targetVersion,
+      };
+    } else {
+      packageMetaData = await this.getPackageMetadata(packageName, version);
     }
 
     let { metadata, tarball, targetVersion } = packageMetaData;

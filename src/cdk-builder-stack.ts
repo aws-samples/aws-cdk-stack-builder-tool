@@ -12,7 +12,10 @@ import * as cf from "aws-cdk-lib/aws-cloudfront";
 
 export class CDKBuilderStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
-    super(scope, id, props);
+    super(scope, id, {
+      description: "AWS CDK Builder (uksb-1tupboc36)",
+      ...props,
+    });
 
     const appPath = path.join(__dirname, "react-app");
     const buildPath = path.join(appPath, "dist");
