@@ -6,6 +6,7 @@ import { ecsClusterBlueprint } from "../blueprints/ecs-cluster";
 import { eksClusterBlueprint } from "../blueprints/eks-cluster";
 import { staticWebsiteBlueprint } from "../blueprints/static-website";
 import { cdkSSMDocumentsBlueprint } from "../blueprints/cdk-ssm-documents";
+import { generativeAIBlueprint } from "../blueprints/generative-ai";
 
 export const blueprintExtended: {
   [key: string]: BlueprintExtend;
@@ -87,6 +88,7 @@ export const blueprintExtended: {
 export const projectBlueprints = [
   blankBlueprint,
   ec2InstanceBlueprint,
+  generativeAIBlueprint,
   staticWebsiteBlueprint,
   auroraPostgresClusterBlueprint,
   ecsClusterBlueprint,
