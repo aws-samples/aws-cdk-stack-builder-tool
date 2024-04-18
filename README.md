@@ -36,7 +36,7 @@ But if you wish to deploy it on your own account, here is a step-by-step guide.
 #### Deploy with AWS Cloud9
 We recommend deploying with [AWS Cloud9](https://aws.amazon.com/cloud9/).
 If you'd like to use Cloud9 to deploy the solution, you will need the following before proceeding:
-- use `Ubuntu Server 22.04 LTS` as the platform.
+- use `Amazon Linux 2023` as the platform.
 
 #### Local deployment
 If you have decided not to use AWS Cloud9, verify that your environment satisfies the following prerequisites:
