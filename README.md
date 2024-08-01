@@ -9,8 +9,6 @@
 ## Table of content
 - [Features](#features)
 - [Deploy](#deploy)
-  - [With AWS Cloud9](#deploy-with-aws-cloud9)
-  - [Local deployment](#local-deployment)
 - [Clean up](#clean-up)
 - [Architecture](#architecture)
 - [Adding private constructs](#adding-private-constructs)
@@ -33,13 +31,7 @@ But if you wish to deploy it on your own account, here is a step-by-step guide.
 
 ### Environment setup
 
-#### Deploy with AWS Cloud9
-We recommend deploying with [AWS Cloud9](https://aws.amazon.com/cloud9/).
-If you'd like to use Cloud9 to deploy the solution, you will need the following before proceeding:
-- use `Amazon Linux 2023` as the platform.
-
-#### Local deployment
-If you have decided not to use AWS Cloud9, verify that your environment satisfies the following prerequisites:
+Verify that your environment satisfies the following prerequisites:
 
 You have:
 
